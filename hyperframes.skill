@@ -1,0 +1,26 @@
+# Manus AI Agent Skill Configuration Manifest
+manifest_version = "1.0"
+id = "hyperframes-video-generator"
+name = "HyperFrames Render Engine"
+description = "Programmatic HTML5 video creation framework leveraging HeyGen HyperFrames, GSAP, and FFmpeg."
+version = "1.1.0"
+category = "Media Automation"
+
+[runtime]
+engine = "node22"
+entrypoint = "scripts/render.js"
+system_dependencies = ["ffmpeg", "chromium-browser"]
+
+[schema]
+type = "object"
+required = []
+
+[schema.properties]
+text = { type = "string", description = "Fallback text if no custom HTML body is provided." }
+duration = { type = "integer", description = "Total clip time in seconds.", default = 5 }
+width = { type = "integer", description = "Horizontal viewport canvas size in pixels.", default = 1080 }
+height = { type = "integer", description = "Vertical viewport canvas size in pixels.", default = 1920 }
+output_filename = { type = "string", description = "The naming string for the final compiled media file.", default = "manus_render.mp4" }
+html_body = { type = "string", description = "Dynamic HTML content to replace the default text structure." }
+css_styles = { type = "string", description = "Dynamic CSS to inject into the head for custom styling." }
+gsap_logic = { type = "string", description = "Dynamic GSAP javascript animation logic." }
