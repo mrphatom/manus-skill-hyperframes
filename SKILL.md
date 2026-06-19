@@ -22,5 +22,5 @@ This skill accepts dynamic parameters via the MANUS_SKILL_ARGS environment varia
 ## Execution Workflow
 1. The agent will execute node scripts/render.js.
 2. The script isolates a build environment in /tmp/.
-3. It generates the valid hyperframes.config.json and index.html using the injected parameters.
+3. It generates a valid index.html composition (root data-* timing/size attributes plus a GSAP timeline registered on window.__timelines) using the injected parameters.
 4. It installs the necessary packages and executes npx hyperframes render.
